@@ -32,9 +32,9 @@ def VerVariablesEntorno():
 def gordos(path_dir,size):
 #Funcion que devuelva los ficheros que ocupan mas de un tamanio indicado
 	if str(size).count("M"):
-		size_final=int(str(size)[:-1])*1024
-	elif str(size).count("G"):
 		size_final=int(str(size)[:-1])*1024*1024
+	elif str(size).count("G"):
+		size_final=int(str(size)[:-1])*1024*1024*1024
 	else:
 		size_final=size
 	for x in os.listdir(path_dir):
