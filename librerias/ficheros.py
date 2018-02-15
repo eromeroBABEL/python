@@ -42,3 +42,23 @@ def gordos(path_dir,size):
 		size_file=os.path.getsize(path_completo)
 		if os.path.isfile(path_completo) and size_file>size_final:
 			print x+" --> "+str(size_file)+" Bytes"
+
+
+"""
+LEER y ESCRIBIR en ficheros.
+Objeto File : No es una libreria (No es necesario import)
+f=open('f1.txt',w)
+f.read([bytes])
+f.readline([bytes]). Si no ponemos argumento lee una linea.
+f.write("cadena")
+f.writelines("secuencia")
+f.close()
+"""
+
+def CatNombreFichero(path_fichero):
+#Programa que acepte un nombre de fichero y lo lea
+	if os.path.exists(path_fichero):
+		f=open(path_fichero,'r')
+		for x in f.readlines():
+			print x[0:-1]
+		f.close()
