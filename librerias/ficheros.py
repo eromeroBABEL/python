@@ -64,12 +64,17 @@ def CatNombreFichero(path_fichero):
 		f.close()
 
 def cp(fichero1,fichero2):
-        if os.access(fichero1,0):
-                fich=open(fichero1,"r")
-                fich2=open(fichero2,"w")
-                while True:
-                        linea=fich.readline()
-                        if not linea: break;
-                        fich2.write(linea)
-                fich2.close()
-                fich.close()
+	if os.access(fichero1,0):
+		if os.path.isfile(fichero1)
+			fich=open(fichero1,"r")
+			fich2=open(fichero2,"w")
+			while True:
+		       		linea=fich.readline()
+		       		if not linea: break;
+		       		fich2.write(linea)
+				fich2.close()
+			fich.close()
+		else:
+			print("No es un fichero")
+	else:
+		print("Path no existe.")
