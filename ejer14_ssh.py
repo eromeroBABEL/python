@@ -9,6 +9,7 @@ if len(sys.argv)==2:
 		client=paramiko.SSHClient()
 		client.load_system_host_keys()
 		client.connect(host_address,22,"root",password)
+		client.set_missing_host_key_policy(paramiko.WarningPolicy)
 		stdin,stdout,stderr= client.exec_command(command)
 		print stdout.read()
 	finally:
