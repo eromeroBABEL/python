@@ -62,3 +62,14 @@ def CatNombreFichero(path_fichero):
 		for x in f.readlines():
 			print x[0:-1]
 		f.close()
+
+def cp(fichero1,fichero2):
+        if os.access(fichero1,0):
+                fich=open(fichero1,"r")
+                fich2=open(fichero2,"w")
+                while True:
+                        linea=fich.readline()
+                        if not linea: break;
+                        fich2.write(linea)
+                fich2.close()
+                fich.close()
